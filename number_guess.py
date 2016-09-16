@@ -35,3 +35,5 @@ while True:
     elif answer == 'n':
         input("Bye!")
         quit()
+    else:
+        print ("Sorry, I didn't catch that.")
