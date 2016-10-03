@@ -1,4 +1,5 @@
 import random
+import os
 
 word_list = [
 'banana',
@@ -6,6 +7,12 @@ word_list = [
 'bang',
 'bangity'
 ]
+
+def clear():
+    if os.name = 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def game():
     word = word_list[random.randint(0, len(word_list) - 1)]
@@ -20,6 +27,8 @@ def game():
         guess = input("Guess a single letter\n>").lower()
         if len(guess) > 1:
             print ("Please enter just one letter at a time!")
+        elif not guess.isalpha():
+            print ("You can only guess letters!")
         else:
             for j in word:
                 if j == guess:
